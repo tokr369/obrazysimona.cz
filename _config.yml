@@ -1,0 +1,4 @@
+# GitHub Pages: administrace je nástroj pro lokální počítač, na web nepatří.
+exclude:
+  - admin
+  - README.md

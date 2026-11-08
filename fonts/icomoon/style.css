@@ -1,0 +1,58 @@
+/* Ikony pro web obrazysimona.cz.
+
+   Puvodne to byla cela sada z icomoon: ~500 trid (79 kB CSS) a font ve ctyrech
+   formatech (eot/svg/ttf/woff, 1,9 MB), kde si prohlizec stahl 307 kB fontu,
+   aby pouzil deset symbolu. Font je ted subsetovany jen na pouzivane symboly
+   (1,5 kB) a CSS obsahuje pouze tridy, ktere stranka skutecne pouziva.
+
+   Kdybyste priste potrebovali jinou ikonu, nevratte starych 4 919 radku:
+     - pouzijte inline SVG, nebo
+     - vygenerujte subset z puvodniho fontu, ktery je v zalozce
+       ~/Apps/obrazysimona-backup-20261103-2322.tar.gz (fonts/icomoon/fonts/icomoon1a44.ttf)
+       pyftsubset icomoon1a44.ttf --unicodes=U+XXXX,U+E5C4,... --flavor=woff
+
+   Pouzivane codepointy:
+     z markupu:     icon-facebook f09a | icon-instagram f16d | icon-youtube-play f16a
+                    icon-menu e5d2 | icon-close2 e5cd
+     z css/style.css (pseudoelementy bez tridy):
+                    e5c4 a e5c8 sipky karuselu | e313 a e315 sipky nabidky
+                    f078 sipka mobilniho menu
+*/
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('fonts/icomoon-subset.woff') format('woff'),
+       url('fonts/icomoon-subset.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* !important kvuli prohlizecovym rozsirum, which can rewrite icon fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-instagram:before {
+  content: "\f16d";
+}
+.icon-youtube-play:before {
+  content: "\f16a";
+}
+.icon-menu:before {
+  content: "\e5d2";
+}
+.icon-close2:before {
+  content: "\e5cd";
+}

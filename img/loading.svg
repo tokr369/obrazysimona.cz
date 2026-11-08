@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" role="img" aria-label="Načítám">
+  <circle cx="22" cy="22" r="19" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="3"/>
+  <path d="M22 3 a19 19 0 0 1 19 19" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="rotate" from="0 22 22" to="360 22 22" dur="0.9s" repeatCount="indefinite"/>
+  </path>
+</svg>

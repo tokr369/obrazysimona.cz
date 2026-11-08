@@ -1,0 +1,6 @@
+# Administrace je nástroj jen pro lokální počítač — na veřejném GitHubu nic
+# z ní být nesmí (admin/ včetně záloh, dat i skriptů).
+/admin/
+
+# README rozebírá vývojové nástroje a detaily správy — držíme ho jen pro nás.
+/README.md
