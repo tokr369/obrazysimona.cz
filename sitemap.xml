@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Stranky webu. Datum poslední změny udrzuje admin/build.js: pri kazdem
+     zapisu galerie (node admin/build.js --write) se lastmod sune na dnesek.
+     Jednotlive malby tu nejsou — nemaji vlastni URL, jsou casti galerie
+     a strojove je popsane JSON-LD primo v index.html. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://obrazysimona.cz/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://obrazysimona.cz/contact.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

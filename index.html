@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <title>ObrazySimona.cz ~ Zakázková tvorba obrazů mazlíčků a zvířat</title>
     <meta charset="utf-8">
+    <title>ObrazySimona.cz ~ Obrazy mazlíčků a zvířat na zakázku</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta name="description" content="Zakázková tvorba obrazů mazlíčků a zvířat akrylem. Autorka Simona Krchňáková, prodejna Ostrava Poruba.">
+    <link rel="canonical" href="https://obrazysimona.cz/">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Náhled odkazu, když se stránka sdílí na Facebooku, Instagramu nebo WhatsAppu.
+         Obrázek 1200x630 je ořezaný snímek malby; vyrobí se:
+           magick images/big_images/obraz_<slug>_big.jpg -gravity center \
+                  -resize 1200x630^ -gravity center -extent 1200x630 -strip -quality 84 img/og-cover.jpg -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ObrazySimona.cz">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:url" content="https://obrazysimona.cz/">
+    <meta property="og:title" content="Obrazy mazlíčků a zvířat na zakázku">
+    <meta property="og:description" content="Originální malby akrylem na plátně. Portréty mazlíčků na zakázku i hotové obrazy k prodeji — Ostrava, Porubská 825.">
+    <meta property="og:image" content="https://obrazysimona.cz/img/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Malba západu slunce akrylem na plátně">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" href="img/obrazysimona-logo_small.png">
+    <link rel="apple-touch-icon" href="img/obrazysimona-logo_small.png">
+
+    <!-- Statická část structured data. Katalog maleb (#galerie) a autorku (#autorka)
+         přidává generátor mezi značkami gallery:head níže — obojí sedí v jedné
+         "@graph", takže WebSite pozná, kdo je autorem maleb. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://obrazysimona.cz/#web",
+      "name": "ObrazySimona.cz",
+      "alternateName": "Obrazy Simony Krchňákové",
+      "url": "https://obrazysimona.cz/",
+      "inLanguage": "cs",
+      "publisher": { "@id": "https://obrazysimona.cz/#autorka" }
+    }
+    </script>
 
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -16,6 +52,67 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
     
+<!-- gallery:head:start -->
+    <!-- katalog maleb pro vyhledávače a načítání první fotky karuselu — generuje admin/gallery.json, neprepisujte rucni -->
+    <link rel="preload" as="image" href="images/carousel/zlaty-retrivr.jpg" fetchpriority="high">
+    <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://obrazysimona.cz/#autorka",
+   "name": "Simona Krchňáková",
+   "url": "https://obrazysimona.cz/"
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://obrazysimona.cz/#galerie",
+   "name": "Galerie maleb — ObrazySimona.cz",
+   "url": "https://obrazysimona.cz/",
+   "numberOfItems": 35,
+   "itemListElement": [
+    {"@type":"ListItem","position":1,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#divoky-hrebec","url":"https://obrazysimona.cz/#divoky-hrebec","name":"Divoký hřebec","image":"https://obrazysimona.cz/images/big_images/obraz_divoky-hrebec_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#divoky-hrebec","price":"1270","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":2,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#moudra-sova","url":"https://obrazysimona.cz/#moudra-sova","name":"Moudrá sova","image":"https://obrazysimona.cz/images/big_images/obraz_moudra-sova_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#moudra-sova","price":"1270","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":3,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#tajemny-vlk","url":"https://obrazysimona.cz/#tajemny-vlk","name":"Tajemný vlk","image":"https://obrazysimona.cz/images/big_images/obraz_tajemny-vlk_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#tajemny-vlk","price":"1270","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":4,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#veverka-ciperka","url":"https://obrazysimona.cz/#veverka-ciperka","name":"Veverka Čiperka","image":"https://obrazysimona.cz/images/big_images/obraz_veverka-ciperka_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#veverka-ciperka","price":"1270","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":5,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#amazonka","url":"https://obrazysimona.cz/#amazonka","name":"Amazonka","image":"https://obrazysimona.cz/images/big_images/obraz_amazonka_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#amazonka","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":6,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#oranzovy-andel","url":"https://obrazysimona.cz/#oranzovy-andel","name":"Oranžový Anděl","image":"https://obrazysimona.cz/images/big_images/obraz_oranzovy-andel_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#oranzovy-andel","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":7,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#elektricka","url":"https://obrazysimona.cz/#elektricka","name":"Elektrická","image":"https://obrazysimona.cz/images/big_images/obraz_elektricka_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 20x20 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":20,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":20,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#elektricka","price":"390","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":8,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#zasnena","url":"https://obrazysimona.cz/#zasnena","name":"Zasněná","image":"https://obrazysimona.cz/images/big_images/obraz_zasnena_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x25 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":25,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#zasnena","price":"770","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":9,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#vcela","url":"https://obrazysimona.cz/#vcela","name":"Čmelák","image":"https://obrazysimona.cz/images/big_images/obraz_vcela_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#vcela","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":10,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#princezna","url":"https://obrazysimona.cz/#princezna","name":"Princezna","image":"https://obrazysimona.cz/images/big_images/obraz_princezna_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#princezna","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":11,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#andel-modry","url":"https://obrazysimona.cz/#andel-modry","name":"Anděl modrý","image":"https://obrazysimona.cz/images/big_images/obraz_andel-modry_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#andel-modry","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":12,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#novy-andel","url":"https://obrazysimona.cz/#novy-andel","name":"Anděl","image":"https://obrazysimona.cz/images/big_images/obraz_novy-andel_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#novy-andel","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":13,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#zima","url":"https://obrazysimona.cz/#zima","name":"Zima","image":"https://obrazysimona.cz/images/big_images/obraz_zima_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#zima","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":14,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#indianka-2","url":"https://obrazysimona.cz/#indianka-2","name":"Indiánka #2","image":"https://obrazysimona.cz/images/big_images/obraz_indianka-2_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#indianka-2","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":15,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#pes-v-zime","url":"https://obrazysimona.cz/#pes-v-zime","name":"Mazlíček na zakázku","image":"https://obrazysimona.cz/images/big_images/obraz_pes-v-zime_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný — Zhotovíme portrét i Vašeho domácího mazlíčka","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"}}},
+       {"@type":"ListItem","position":16,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#snezny-levhart","url":"https://obrazysimona.cz/#snezny-levhart","name":"Sněžný levhart","image":"https://obrazysimona.cz/images/big_images/obraz_snezny-levhart_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#snezny-levhart","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":17,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#zajic-v-desti","url":"https://obrazysimona.cz/#zajic-v-desti","name":"Zajíc v dešti","image":"https://obrazysimona.cz/images/big_images/obraz_zajic-v-desti_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#zajic-v-desti","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":18,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#plavajici-pejsek","url":"https://obrazysimona.cz/#plavajici-pejsek","name":"Plavající pejsek","image":"https://obrazysimona.cz/images/big_images/obraz_plavajici-pejsek_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#plavajici-pejsek","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":19,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#ruzovy-andel","url":"https://obrazysimona.cz/#ruzovy-andel","name":"Růžový Anděl","image":"https://obrazysimona.cz/images/big_images/obraz_ruzovy-andel_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#ruzovy-andel","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":20,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#zimni-pohoda","url":"https://obrazysimona.cz/#zimni-pohoda","name":"Zimní pohoda","image":"https://obrazysimona.cz/images/big_images/obraz_zimni-pohoda_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#zimni-pohoda","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":21,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#pejsek-na-ledu","url":"https://obrazysimona.cz/#pejsek-na-ledu","name":"Pejsek na ledu","image":"https://obrazysimona.cz/images/big_images/obraz_pejsek-na-ledu_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#pejsek-na-ledu","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":22,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#ruzova-kytice","url":"https://obrazysimona.cz/#ruzova-kytice","name":"Růžová kytice","image":"https://obrazysimona.cz/images/big_images/obraz_ruzova-kytice_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#ruzova-kytice","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":23,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#vlna","url":"https://obrazysimona.cz/#vlna","name":"Vlna","image":"https://obrazysimona.cz/images/big_images/obraz_vlna_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#vlna","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":24,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#lom-na-jare","url":"https://obrazysimona.cz/#lom-na-jare","name":"Lom na jaře","image":"https://obrazysimona.cz/images/big_images/obraz_lom-na-jare_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#lom-na-jare","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":25,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#jeskyne","url":"https://obrazysimona.cz/#jeskyne","name":"Jeskyně","image":"https://obrazysimona.cz/images/big_images/obraz_jeskyne_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#jeskyne","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":26,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#zlaty-retrivr","url":"https://obrazysimona.cz/#zlaty-retrivr","name":"Zlatý retrívr","image":"https://obrazysimona.cz/images/big_images/obraz_zlaty-retrivr_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#zlaty-retrivr","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":27,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#podzimni-listi","url":"https://obrazysimona.cz/#podzimni-listi","name":"Podzimní listí","image":"https://obrazysimona.cz/images/big_images/obraz_podzimni-listi_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#podzimni-listi","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":28,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#zasnezeny-pejsek","url":"https://obrazysimona.cz/#zasnezeny-pejsek","name":"Zasněžený pejsek","image":"https://obrazysimona.cz/images/big_images/obraz_zasnezeny-pejsek_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#zasnezeny-pejsek","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":29,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#pejsek-s-beruskou","url":"https://obrazysimona.cz/#pejsek-s-beruskou","name":"Pejsek s beruškou","image":"https://obrazysimona.cz/images/big_images/obraz_pejsek-s-beruskou_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#pejsek-s-beruskou","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":30,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#liska-v-zime","url":"https://obrazysimona.cz/#liska-v-zime","name":"Liška v zimě","image":"https://obrazysimona.cz/images/big_images/obraz_liska-v-zime_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#liska-v-zime","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":31,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#vlna-2","url":"https://obrazysimona.cz/#vlna-2","name":"Vlna #2","image":"https://obrazysimona.cz/images/big_images/obraz_vlna-2_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#vlna-2","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":32,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#vistarie","url":"https://obrazysimona.cz/#vistarie","name":"Vistárie","image":"https://obrazysimona.cz/images/big_images/obraz_vistarie_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#vistarie","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":33,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#podzim","url":"https://obrazysimona.cz/#podzim","name":"Podzim","image":"https://obrazysimona.cz/images/big_images/obraz_podzim_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#podzim","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":34,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#zapad-slunce","url":"https://obrazysimona.cz/#zapad-slunce","name":"Západ slunce","image":"https://obrazysimona.cz/images/big_images/obraz_zapad-slunce_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x40 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":40,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#zapad-slunce","price":"1090","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}},
+       {"@type":"ListItem","position":35,"item":{"@type":"VisualArtwork","@id":"https://obrazysimona.cz/#fialovy-andel","url":"https://obrazysimona.cz/#fialovy-andel","name":"Fialový anděl","image":"https://obrazysimona.cz/images/big_images/obraz_fialovy-andel_big.jpg","creator":{"@id":"https://obrazysimona.cz/#autorka"},"description":"Akryl na plátně 30x30 cm, lakovaný","artMedium":"Akryl na plátně","width":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"height":{"@type":"QuantitativeValue","value":30,"unitCode":"CMT"},"offers":{"@type":"Offer","url":"https://obrazysimona.cz/#fialovy-andel","price":"990","priceCurrency":"CZK","availability":"https://schema.org/InStock"}}}
+   ]
+  }
+ ]
+}
+    </script>
+<!-- gallery:head:end -->
   </head>
   <body>
   
@@ -24,7 +121,7 @@
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
+          <span class="icon-close2 js-menu-toggle" aria-hidden="true"></span>
         </div>
       </div>
       <div class="site-mobile-menu-body"></div>
@@ -35,10 +132,10 @@
       <div class="container-fluid">
         <div class="row align-items-center">
           
-          <div class="col-6 col-xl-2" data-aos="fade-down">
+          <div class="col-6 col-xl-2">
             <h1 class="mb-0"><a href="./" class="text-black h2 mb-0"><img src="./img/obrazysimona-logo_small.png" alt="ObrazySimona.cz" width="128" height="128"></a></h1>
           </div>
-          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+          <div class="col-10 col-md-8 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
@@ -48,22 +145,22 @@
             </nav>
           </div>
 
-          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+          <div class="col-6 col-xl-2 text-right">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 <li>
-                  <a href="#" class="pl-0 pr-3" aria-label="Facebook"><span class="icon-facebook"></span></a>
+                  <a href="#" class="pl-0 pr-3" aria-label="Facebook"><span class="icon-facebook" aria-hidden="true"></span></a>
                 </li>
                 <li>
-                  <a href="#" class="pl-3 pr-3" aria-label="Instagram"><span class="icon-instagram"></span></a>
+                  <a href="#" class="pl-3 pr-3" aria-label="Instagram"><span class="icon-instagram" aria-hidden="true"></span></a>
                 </li>
                 <li>
-                  <a href="#" class="pl-3 pr-3" aria-label="YouTube"><span class="icon-youtube-play"></span></a>
+                  <a href="#" class="pl-3 pr-3" aria-label="YouTube"><span class="icon-youtube-play" aria-hidden="true"></span></a>
                 </li>
               </ul>
             </div>
 
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3" aria-hidden="true"></span></a></div>
 
           </div>
 
@@ -72,13 +169,13 @@
       
     </header>
 
-  <div class="container-fluid" data-aos="fade" data-aos-delay="500">
+  <div class="container-fluid">
     <div class="swiper-container images-carousel">
         <div class="swiper-wrapper">
 <!-- gallery:hero:start -->
             <div class="swiper-slide">
               <div class="image-wrap">
-                <img src="images/carousel/zlaty-retrivr.jpg" alt="Zlatý retrívr" width="675" height="900">
+                <img src="images/carousel/zlaty-retrivr.jpg" alt="Zlatý retrívr" width="675" height="900" fetchpriority="high">
               </div>
             </div>
             <div class="swiper-slide">
@@ -117,283 +214,283 @@
       </div>
       <div class="row" id="lightgallery">
 <!-- gallery:items:start -->
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="divoky-hrebec" data-aos="fade"
              data-src="images/big_images/obraz_divoky-hrebec_big.jpg"
              data-sub-html="<h4>Divoký hřebec</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1270 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Divoký hřebec</p>
-          <a href="#"><img src="images/obraz_divoky-hrebec_small.jpg" alt="Divoký hřebec"
+          <a href="images/big_images/obraz_divoky-hrebec_big.jpg"><img src="images/obraz_divoky-hrebec_small.jpg" alt="Divoký hřebec"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="moudra-sova" data-aos="fade"
              data-src="images/big_images/obraz_moudra-sova_big.jpg"
              data-sub-html="<h4>Moudrá sova</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1270 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Moudrá sova</p>
-          <a href="#"><img src="images/obraz_moudra-sova_small.jpg" alt="Moudrá sova"
+          <a href="images/big_images/obraz_moudra-sova_big.jpg"><img src="images/obraz_moudra-sova_small.jpg" alt="Moudrá sova"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="tajemny-vlk" data-aos="fade"
              data-src="images/big_images/obraz_tajemny-vlk_big.jpg"
              data-sub-html="<h4>Tajemný vlk</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1270 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Tajemný vlk</p>
-          <a href="#"><img src="images/obraz_tajemny-vlk_small.jpg" alt="Tajemný vlk"
+          <a href="images/big_images/obraz_tajemny-vlk_big.jpg"><img src="images/obraz_tajemny-vlk_small.jpg" alt="Tajemný vlk"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="veverka-ciperka" data-aos="fade"
              data-src="images/big_images/obraz_veverka-ciperka_big.jpg"
              data-sub-html="<h4>Veverka Čiperka</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1270 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Veverka Čiperka</p>
-          <a href="#"><img src="images/obraz_veverka-ciperka_small.jpg" alt="Veverka Čiperka"
+          <a href="images/big_images/obraz_veverka-ciperka_big.jpg"><img src="images/obraz_veverka-ciperka_small.jpg" alt="Veverka Čiperka"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="amazonka" data-aos="fade"
              data-src="images/big_images/obraz_amazonka_big.jpg"
              data-sub-html="<h4>Amazonka</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Amazonka</p>
-          <a href="#"><img src="images/obraz_amazonka_small.jpg" alt="Amazonka"
+          <a href="images/big_images/obraz_amazonka_big.jpg"><img src="images/obraz_amazonka_small.jpg" alt="Amazonka"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="oranzovy-andel" data-aos="fade"
              data-src="images/big_images/obraz_oranzovy-andel_big.jpg"
              data-sub-html="<h4>Oranžový Anděl</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Oranžový Anděl</p>
-          <a href="#"><img src="images/obraz_oranzovy-andel_small.jpg" alt="Oranžový Anděl"
+          <a href="images/big_images/obraz_oranzovy-andel_big.jpg"><img src="images/obraz_oranzovy-andel_small.jpg" alt="Oranžový Anděl"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="elektricka" data-aos="fade"
              data-src="images/big_images/obraz_elektricka_big.jpg"
              data-sub-html="<h4>Elektrická</h4><p>Akryl na plátně 20x20 cm, lakovaný / 390 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Elektrická</p>
-          <a href="#"><img src="images/obraz_elektricka_small.jpg" alt="Elektrická"
+          <a href="images/big_images/obraz_elektricka_big.jpg"><img src="images/obraz_elektricka_small.jpg" alt="Elektrická"
                class="img-fluid" loading="lazy" width="553" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="zasnena" data-aos="fade"
              data-src="images/big_images/obraz_zasnena_big.jpg"
              data-sub-html="<h4>Zasněná</h4><p>Akryl na plátně 30x25 cm, lakovaný / 770 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Zasněná</p>
-          <a href="#"><img src="images/obraz_zasnena_small.jpg" alt="Zasněná"
+          <a href="images/big_images/obraz_zasnena_big.jpg"><img src="images/obraz_zasnena_small.jpg" alt="Zasněná"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="vcela" data-aos="fade"
              data-src="images/big_images/obraz_vcela_big.jpg"
              data-sub-html="<h4>Čmelák</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Čmelák</p>
-          <a href="#"><img src="images/obraz_vcela_small.jpg" alt="Čmelák"
+          <a href="images/big_images/obraz_vcela_big.jpg"><img src="images/obraz_vcela_small.jpg" alt="Čmelák"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="princezna" data-aos="fade"
              data-src="images/big_images/obraz_princezna_big.jpg"
              data-sub-html="<h4>Princezna</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Princezna</p>
-          <a href="#"><img src="images/obraz_princezna_small.jpg" alt="Princezna"
+          <a href="images/big_images/obraz_princezna_big.jpg"><img src="images/obraz_princezna_small.jpg" alt="Princezna"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="andel-modry" data-aos="fade"
              data-src="images/big_images/obraz_andel-modry_big.jpg"
              data-sub-html="<h4>Anděl modrý</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Anděl modrý</p>
-          <a href="#"><img src="images/obraz_andel-modry_small.jpg" alt="Anděl modrý"
+          <a href="images/big_images/obraz_andel-modry_big.jpg"><img src="images/obraz_andel-modry_small.jpg" alt="Anděl modrý"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="novy-andel" data-aos="fade"
              data-src="images/big_images/obraz_novy-andel_big.jpg"
              data-sub-html="<h4>Anděl</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Anděl</p>
-          <a href="#"><img src="images/obraz_novy-andel_small.jpg" alt="Anděl"
+          <a href="images/big_images/obraz_novy-andel_big.jpg"><img src="images/obraz_novy-andel_small.jpg" alt="Anděl"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="zima" data-aos="fade"
              data-src="images/big_images/obraz_zima_big.jpg"
              data-sub-html="<h4>Zima</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Zima</p>
-          <a href="#"><img src="images/obraz_zima_small.jpg" alt="Zima"
+          <a href="images/big_images/obraz_zima_big.jpg"><img src="images/obraz_zima_small.jpg" alt="Zima"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="indianka-2" data-aos="fade"
              data-src="images/big_images/obraz_indianka-2_big.jpg"
              data-sub-html="<h4>Indiánka #2</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Indiánka #2</p>
-          <a href="#"><img src="images/obraz_indianka-2_small.jpg" alt="Indiánka #2"
+          <a href="images/big_images/obraz_indianka-2_big.jpg"><img src="images/obraz_indianka-2_small.jpg" alt="Indiánka #2"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="pes-v-zime" data-aos="fade"
              data-src="images/big_images/obraz_pes-v-zime_big.jpg"
              data-sub-html="<h4>Mazlíček na zakázku</h4><p>Akryl na plátně 30x40 cm, lakovaný / Zhotovíme portrét i Vašeho domácího mazlíčka</p>">
           <p class="text-center font-weight-bold mb-1">Mazlíček na zakázku</p>
-          <a href="#"><img src="images/obraz_pes-v-zime_small.jpg" alt="Mazlíček na zakázku"
+          <a href="images/big_images/obraz_pes-v-zime_big.jpg"><img src="images/obraz_pes-v-zime_small.jpg" alt="Mazlíček na zakázku"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="snezny-levhart" data-aos="fade"
              data-src="images/big_images/obraz_snezny-levhart_big.jpg"
              data-sub-html="<h4>Sněžný levhart</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Sněžný levhart</p>
-          <a href="#"><img src="images/obraz_snezny-levhart_small.jpg" alt="Sněžný levhart"
+          <a href="images/big_images/obraz_snezny-levhart_big.jpg"><img src="images/obraz_snezny-levhart_small.jpg" alt="Sněžný levhart"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="zajic-v-desti" data-aos="fade"
              data-src="images/big_images/obraz_zajic-v-desti_big.jpg"
              data-sub-html="<h4>Zajíc v dešti</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Zajíc v dešti</p>
-          <a href="#"><img src="images/obraz_zajic-v-desti_small.jpg" alt="Zajíc v dešti"
+          <a href="images/big_images/obraz_zajic-v-desti_big.jpg"><img src="images/obraz_zajic-v-desti_small.jpg" alt="Zajíc v dešti"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="plavajici-pejsek" data-aos="fade"
              data-src="images/big_images/obraz_plavajici-pejsek_big.jpg"
              data-sub-html="<h4>Plavající pejsek</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Plavající pejsek</p>
-          <a href="#"><img src="images/obraz_plavajici-pejsek_small.jpg" alt="Plavající pejsek"
+          <a href="images/big_images/obraz_plavajici-pejsek_big.jpg"><img src="images/obraz_plavajici-pejsek_small.jpg" alt="Plavající pejsek"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="ruzovy-andel" data-aos="fade"
              data-src="images/big_images/obraz_ruzovy-andel_big.jpg"
              data-sub-html="<h4>Růžový Anděl</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Růžový Anděl</p>
-          <a href="#"><img src="images/obraz_ruzovy-andel_small.jpg" alt="Růžový Anděl"
+          <a href="images/big_images/obraz_ruzovy-andel_big.jpg"><img src="images/obraz_ruzovy-andel_small.jpg" alt="Růžový Anděl"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="zimni-pohoda" data-aos="fade"
              data-src="images/big_images/obraz_zimni-pohoda_big.jpg"
              data-sub-html="<h4>Zimní pohoda</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Zimní pohoda</p>
-          <a href="#"><img src="images/obraz_zimni-pohoda_small.jpg" alt="Zimní pohoda"
+          <a href="images/big_images/obraz_zimni-pohoda_big.jpg"><img src="images/obraz_zimni-pohoda_small.jpg" alt="Zimní pohoda"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="pejsek-na-ledu" data-aos="fade"
              data-src="images/big_images/obraz_pejsek-na-ledu_big.jpg"
              data-sub-html="<h4>Pejsek na ledu</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Pejsek na ledu</p>
-          <a href="#"><img src="images/obraz_pejsek-na-ledu_small.jpg" alt="Pejsek na ledu"
+          <a href="images/big_images/obraz_pejsek-na-ledu_big.jpg"><img src="images/obraz_pejsek-na-ledu_small.jpg" alt="Pejsek na ledu"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="ruzova-kytice" data-aos="fade"
              data-src="images/big_images/obraz_ruzova-kytice_big.jpg"
              data-sub-html="<h4>Růžová kytice</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Růžová kytice</p>
-          <a href="#"><img src="images/obraz_ruzova-kytice_small.jpg" alt="Růžová kytice"
+          <a href="images/big_images/obraz_ruzova-kytice_big.jpg"><img src="images/obraz_ruzova-kytice_small.jpg" alt="Růžová kytice"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="vlna" data-aos="fade"
              data-src="images/big_images/obraz_vlna_big.jpg"
              data-sub-html="<h4>Vlna</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Vlna</p>
-          <a href="#"><img src="images/obraz_vlna_small.jpg" alt="Vlna"
+          <a href="images/big_images/obraz_vlna_big.jpg"><img src="images/obraz_vlna_small.jpg" alt="Vlna"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="lom-na-jare" data-aos="fade"
              data-src="images/big_images/obraz_lom-na-jare_big.jpg"
              data-sub-html="<h4>Lom na jaře</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Lom na jaře</p>
-          <a href="#"><img src="images/obraz_lom-na-jare_small.jpg" alt="Lom na jaře"
+          <a href="images/big_images/obraz_lom-na-jare_big.jpg"><img src="images/obraz_lom-na-jare_small.jpg" alt="Lom na jaře"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="jeskyne" data-aos="fade"
              data-src="images/big_images/obraz_jeskyne_big.jpg"
              data-sub-html="<h4>Jeskyně</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Jeskyně</p>
-          <a href="#"><img src="images/obraz_jeskyne_small.jpg" alt="Jeskyně"
+          <a href="images/big_images/obraz_jeskyne_big.jpg"><img src="images/obraz_jeskyne_small.jpg" alt="Jeskyně"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="zlaty-retrivr" data-aos="fade"
              data-src="images/big_images/obraz_zlaty-retrivr_big.jpg"
              data-sub-html="<h4>Zlatý retrívr</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Zlatý retrívr</p>
-          <a href="#"><img src="images/obraz_zlaty-retrivr_small.jpg" alt="Zlatý retrívr"
+          <a href="images/big_images/obraz_zlaty-retrivr_big.jpg"><img src="images/obraz_zlaty-retrivr_small.jpg" alt="Zlatý retrívr"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="podzimni-listi" data-aos="fade"
              data-src="images/big_images/obraz_podzimni-listi_big.jpg"
              data-sub-html="<h4>Podzimní listí</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Podzimní listí</p>
-          <a href="#"><img src="images/obraz_podzimni-listi_small.jpg" alt="Podzimní listí"
+          <a href="images/big_images/obraz_podzimni-listi_big.jpg"><img src="images/obraz_podzimni-listi_small.jpg" alt="Podzimní listí"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="zasnezeny-pejsek" data-aos="fade"
              data-src="images/big_images/obraz_zasnezeny-pejsek_big.jpg"
              data-sub-html="<h4>Zasněžený pejsek</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Zasněžený pejsek</p>
-          <a href="#"><img src="images/obraz_zasnezeny-pejsek_small.jpg" alt="Zasněžený pejsek"
+          <a href="images/big_images/obraz_zasnezeny-pejsek_big.jpg"><img src="images/obraz_zasnezeny-pejsek_small.jpg" alt="Zasněžený pejsek"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="pejsek-s-beruskou" data-aos="fade"
              data-src="images/big_images/obraz_pejsek-s-beruskou_big.jpg"
              data-sub-html="<h4>Pejsek s beruškou</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Pejsek s beruškou</p>
-          <a href="#"><img src="images/obraz_pejsek-s-beruskou_small.jpg" alt="Pejsek s beruškou"
+          <a href="images/big_images/obraz_pejsek-s-beruskou_big.jpg"><img src="images/obraz_pejsek-s-beruskou_small.jpg" alt="Pejsek s beruškou"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="liska-v-zime" data-aos="fade"
              data-src="images/big_images/obraz_liska-v-zime_big.jpg"
              data-sub-html="<h4>Liška v zimě</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Liška v zimě</p>
-          <a href="#"><img src="images/obraz_liska-v-zime_small.jpg" alt="Liška v zimě"
+          <a href="images/big_images/obraz_liska-v-zime_big.jpg"><img src="images/obraz_liska-v-zime_small.jpg" alt="Liška v zimě"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="vlna-2" data-aos="fade"
              data-src="images/big_images/obraz_vlna-2_big.jpg"
              data-sub-html="<h4>Vlna #2</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Vlna #2</p>
-          <a href="#"><img src="images/obraz_vlna-2_small.jpg" alt="Vlna #2"
+          <a href="images/big_images/obraz_vlna-2_big.jpg"><img src="images/obraz_vlna-2_small.jpg" alt="Vlna #2"
                class="img-fluid" loading="lazy" width="420" height="560"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="vistarie" data-aos="fade"
              data-src="images/big_images/obraz_vistarie_big.jpg"
              data-sub-html="<h4>Vistárie</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Vistárie</p>
-          <a href="#"><img src="images/obraz_vistarie_small.jpg" alt="Vistárie"
+          <a href="images/big_images/obraz_vistarie_big.jpg"><img src="images/obraz_vistarie_small.jpg" alt="Vistárie"
                class="img-fluid" loading="lazy" width="560" height="419"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="podzim" data-aos="fade"
              data-src="images/big_images/obraz_podzim_big.jpg"
              data-sub-html="<h4>Podzim</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Podzim</p>
-          <a href="#"><img src="images/obraz_podzim_small.jpg" alt="Podzim"
+          <a href="images/big_images/obraz_podzim_big.jpg"><img src="images/obraz_podzim_small.jpg" alt="Podzim"
                class="img-fluid" loading="lazy" width="560" height="420"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="zapad-slunce" data-aos="fade"
              data-src="images/big_images/obraz_zapad-slunce_big.jpg"
              data-sub-html="<h4>Západ slunce</h4><p>Akryl na plátně 30x40 cm, lakovaný / 1090 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Západ slunce</p>
-          <a href="#"><img src="images/obraz_zapad-slunce_small.jpg" alt="Západ slunce"
+          <a href="images/big_images/obraz_zapad-slunce_big.jpg"><img src="images/obraz_zapad-slunce_small.jpg" alt="Západ slunce"
                class="img-fluid" loading="lazy" width="560" height="420"></a>
         </div>
 
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade"
+        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" id="fialovy-andel" data-aos="fade"
              data-src="images/big_images/obraz_fialovy-andel_big.jpg"
              data-sub-html="<h4>Fialový anděl</h4><p>Akryl na plátně 30x30 cm, lakovaný / 990 Kč</p>">
           <p class="text-center font-weight-bold mb-1">Fialový anděl</p>
-          <a href="#"><img src="images/obraz_fialovy-andel_small.jpg" alt="Fialový anděl"
+          <a href="images/big_images/obraz_fialovy-andel_big.jpg"><img src="images/obraz_fialovy-andel_small.jpg" alt="Fialový anděl"
                class="img-fluid" loading="lazy" width="560" height="540"></a>
         </div>
 <!-- gallery:items:end -->
@@ -474,8 +571,8 @@
 
   <div class="footer py-4">
     <div class="container-fluid">
-      <p align="center">
-      &copy; <script>document.write(new Date().getFullYear());</script> | Všechna práva vyhrazena | Autorem maleb Simona Krchňáková 
+      <p class="text-center">
+        &copy; <span id="rok">2026</span> | Všechna práva vyhrazena | Autorem maleb Simona Krchňáková
       </p>
     </div>
   </div>
@@ -483,9 +580,6 @@
   </div>
 
   <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   <script src="js/swiper.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.mousewheel.min.js"></script>

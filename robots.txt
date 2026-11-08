@@ -1,0 +1,14 @@
+# ObrazySimona.cz — pravidla pro vyhledávače
+User-agent: *
+Allow: /
+
+# Galerie odkazuje na náhledy v /images/. Atlas plných velikostí v
+# /images/big_images/ obsahuje i maleby, ktere uz nejsou v prodeji —
+# ty ve vysledkach vyhledavani nechceme.
+Disallow: /images/big_images/
+
+# Sprava galerie (admin/) na web nepatri; _config.yml ji vylucuje pri nasazeni.
+# Tohle je pojistka, kdyby se do ni nekdy dostala cesta.
+Disallow: /admin/
+
+Sitemap: https://obrazysimona.cz/sitemap.xml

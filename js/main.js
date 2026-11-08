@@ -5,16 +5,25 @@
  *   mobilni menu   .js-clone-nav / .site-mobile-menu (offcanvas)
  *   Swiper         karusel nahore (.swiper-container) - jen index.html
  *   lightGallery   velky snimek galerie (#lightgallery) - jen index.html
+ *   #rok           rok v paticce (bez document.write)
  *
  * Puvodni sablona (Colorlib) natahovala take owl carousel, magnific popup,
  * datepicker, countdown, jquery-ui slider a stellar parallax. Zadny z techto
- * elementu v markupu neni, takze skripty ani styly nejsou potreba.
+ * elementu v markupu neni, takze skripty ani styly nejsou potreba. Od
+ * listopadu 2026 zmizely i bootstrap.min.js, popper.min.js a jquery-migrate:
+ * stranka nepouziva zadne Bootstrap komponenty (zadny data-toggle) a jQuery
+ * 3.3.1 nepotrebuje zalatu pro stare API.
  */
 
 AOS.init({
     duration: 800,
     easing: 'slide',
-    once: true
+    once: true,
+    // Kdo si preje vynechat animace ve systemu, nema dostavat animace na webu.
+    disable: function () {
+        return window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
 });
 
 jQuery(document).ready(function ($) {
@@ -28,37 +37,10 @@ jQuery(document).ready(function ($) {
             $this.clone().attr('class', 'site-nav-wrap').appendTo('.site-mobile-menu-body');
         });
 
-        // sipky podmenu - uplatni se, az bude navigace obsahovat .has-children
-        setTimeout(function () {
-            var counter = 0;
-            $('.site-mobile-menu .has-children').each(function () {
-                var $this = $(this);
-
-                $this.prepend('<span class="arrow-collapse collapsed">');
-
-                $this.find('.arrow-collapse').attr({
-                    'data-toggle': 'collapse',
-                    'data-target': '#collapseItem' + counter
-                });
-
-                $this.find('> ul').attr({
-                    'class': 'collapse',
-                    'id': 'collapseItem' + counter
-                });
-
-                counter++;
-            });
-        }, 1000);
-
-        $('body').on('click', '.arrow-collapse', function (e) {
-            var $this = $(this);
-            if ($this.closest('li').find('.collapse').hasClass('show')) {
-                $this.removeClass('active');
-            } else {
-                $this.addClass('active');
-            }
-            e.preventDefault();
-        });
+        // Sipky podmenu tu byly, dokud navigace neobsahovala .has-children.
+        // Menu ma dva odkazy a zadne podmenu, proto tu neni ani Bootstrap
+        // collapse, ktery je potreboval. Kdyby se podmenu nekdy pridala,
+        // je treba vratit obe casti - skript i osetreni v css/style.css.
 
         $(window).resize(function () {
             if ($(this).width() > 768 && $('body').hasClass('offcanvas-menu')) {
@@ -119,4 +101,8 @@ jQuery(document).ready(function ($) {
         $('#lightgallery').lightGallery();
     };
     gallerySetting();
+
+    /* --- paticka: aktualni rok. Nahrazuje document.write, ktery v markupu
+           byl — stranka bez nej funguje i pod prisnym CSP. --- */
+    $('#rok').text(new Date().getFullYear());
 });
