@@ -433,3 +433,50 @@ a {
 
 #lightgallery .item {
   margin-bottom: 30px; }
+
+/* Barvy sdileni v lightboxu: Facebook a X je ma od lightGallery, vlastni
+   cile (WhatsApp, e-mail, kopirovani odkazu) je dostavaji tady. */
+.lg-outer .lg-share-whatsapp .lg-icon {
+  color: #25d366; }
+.lg-outer .lg-share-mail .lg-icon {
+  color: #b62b3c; }
+.lg-outer .lg-share-copy .lg-icon {
+  color: #777; }
+
+/* lightGallery 3 dela pruh toolbaru a popisku do ztracena, 1.6.11 je mela
+   plne. Stejna cerna se stejnou pruhlednosti drzi podobu, na jakou je
+   web zvykly - i kdyz obraz pod ne saha (allowMediaOverlap). */
+.lg-outer.lg-media-overlap .lg-toolbar,
+.lg-outer.lg-media-overlap .lg-sub-html {
+  background-color: rgba(0, 0, 0, 0.45);
+  background-image: none; }
+
+/* Kdyz se schova pruh nahledu, 1.6.11 nechala popisek dole; v3 ho schova
+   spolu s nim. Posun o vlastni vysku ho vraci na misto, kde byval - pri
+   zavrenem pruhu dosahuje popisek az ke spodnimu okraji obrazovky. Prechod
+   je stejny jako u pruhu, aby se oboji hybalo spolecne. */
+.lg-components .lg-sub-html {
+  transition: opacity .2s ease-out 0s, transform .35s ease-out 0s; }
+.lg-outer:not(.lg-components-open) .lg-components .lg-sub-html {
+  transform: translate3d(0, -100%, 0); }
+
+/* Pri zvetseni 1.6.11 popisek i pruh nahledu zustaly (obraz je pod
+   prekryval), v3 je pri zoomu schova. Tihle dva radky je vraci - pri
+   zvetsenem obrazu tak jde dál prepinat mezi malbami v pruhu. */
+.lg-outer.lg-components-open.lg-zoomed .lg-components,
+.lg-outer.lg-components-open.lg-zoomed .lg-sub-html {
+  opacity: 1; }
+.lg-outer.lg-components-open.lg-zoomed .lg-components {
+  transform: translate3d(0, 0, 0); }
+
+/* lightbox pouziva pismo stranky: 1.6.11 fontu nedeklarovala a tedy ho dedila,
+   v3 si nastavi vlastni system-ui. Vysledek je na Windows, macOS i Androidu
+   stejny, ale slusne je, aby popisek malby mel typografii zbytku stranky. */
+.lg-container {
+  font-family: inherit; }
+
+/* Pruh nahledu byl uz u 1.6.11 na telefonu vysoky 100 px, v3 si na malych
+   obrazovkach dovoluje 90 px. Stejne odsazeni drzi vysku, od ktere se
+   odvozuje i misto obrazu nad nim. */
+.lg-outer .lg-thumb {
+  padding: 10px 0; }
