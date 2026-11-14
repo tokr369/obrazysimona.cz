@@ -462,7 +462,7 @@ a {
 
 /* Pri zvetseni 1.6.11 popisek i pruh nahledu zustaly (obraz je pod
    prekryval), v3 je pri zoomu schova. Tihle dva radky je vraci - pri
-   zvetsenem obrazu tak jde dál prepinat mezi malbami v pruhu. */
+   zvetsenem obrazu tak jde dal prepinat mezi malbami v pruhu. */
 .lg-outer.lg-components-open.lg-zoomed .lg-components,
 .lg-outer.lg-components-open.lg-zoomed .lg-sub-html {
   opacity: 1; }
@@ -480,3 +480,61 @@ a {
    odvozuje i misto obrazu nad nim. */
 .lg-outer .lg-thumb {
   padding: 10px 0; }
+
+/* --- Galerie: sloupce na cely pocet pixelu (2026-11-14) ----------------
+   Nazev malby je vycentrovan na stred sveho sloupce a fotka vyuziva cely
+   obsah sloupce, geometricky tedy maji oba stejny stred. Presto to pri 100 %
+   zvetseni videt je: Bootstrap rozdeluje rad na sloupce procentualne (col-xl-2 =
+   16,66667 %) a pro vetsinu sirek okna z toho vyjde sloupec sirky 227,656 px.
+   Fotka je raster a ten se pri kresleni snapuje na cele device pixely, takze
+   se jeji kresba o kousek posune a na jednom okraji je o neco silneji nez na
+   druhem. Text se snapuje zvlast a zustava na svem zlomkovem stredu - oko to
+   vidi tak, ze nazev nesedi presne nad malbou. Pred opravou byl rozdil mezi
+   popiskem a malbou 0,0 / +0,5 / +0,5 / -1,0 px lisici se sloupec od sloupce,
+   pri vyssim zvetseni nebo na Retina displeji to videt neni.
+
+   Grid o velikostech stop zaokrouhlenych dolu na 1 px da kazdemu sloupci cely
+   pocet pixelu sirky i startu, takze fotka sedi presne na svem miste a jeji
+   stred splyva se stredem popisku. Prebytek, ktery zaokrouhleni necha (nejvyse
+   N-1 px), rozdeli justify-content symetricky, aby se galerie neposunula.
+   Kde round() neni, zustava padaci varianta repeat(..., 1fr) - to je presne
+   starsi procentualni rozdeleni. */
+@supports (display: grid) {
+  /* grid zde kvuli sirce sloupecu - jen v gridu je lze zaokrouhlit na cele
+     pixely (duvod je ve komentari vyse). Kdo grid neumi, zustava u puvodniho
+     flex rozdeleni; IE11 beztak lightGallery 3 nepodporuje */
+  #lightgallery {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: minmax(0, 1fr); }
+  #lightgallery > .item {
+    /* Bootstrapove tridy col-* nastavuji flex-basis a max-width, ktere by v
+       mrizce sloupec srazily na zlomek jeho sirky */
+    flex: none;
+    width: auto;
+    max-width: none;
+    /* pri sirce 450 az 575 px je nahled (420 px) uzsi nez sloupec a stal by se
+       vlevo, naproti titulku na stredu - text-align to srovnava */
+    text-align: center; }
+  @media (min-width: 576px) {
+    #lightgallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 768px) {
+    #lightgallery { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 992px) {
+    #lightgallery { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (min-width: 1200px) {
+    #lightgallery { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+
+  /* zaokrouhleni stop na cely pocet pixelu - to je ta oprava */
+  @supports (width: round(down, 100%, 1px)) {
+    #lightgallery { grid-template-columns: minmax(0, round(down, 100%, 1px)); }
+    @media (min-width: 576px) {
+      #lightgallery { grid-template-columns: repeat(2, minmax(0, round(down, calc(100% / 2), 1px))); } }
+    @media (min-width: 768px) {
+      #lightgallery { grid-template-columns: repeat(3, minmax(0, round(down, calc(100% / 3), 1px))); } }
+    @media (min-width: 992px) {
+      #lightgallery { grid-template-columns: repeat(4, minmax(0, round(down, calc(100% / 4), 1px))); } }
+    @media (min-width: 1200px) {
+      #lightgallery { grid-template-columns: repeat(6, minmax(0, round(down, calc(100% / 6), 1px))); } }
+  }
+}
