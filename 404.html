@@ -8,6 +8,33 @@
     <meta name="description" content="Stránka nebyla nalezena — ObrazySimona.cz, originální malby mazlíčků a zvířat.">
     <link rel="icon" href="/img/obrazysimona-logo_small.png">
     <meta name="theme-color" content="#ffffff">
+<!-- gallery:slugs:start -->
+    <script id="galerie-zachrana">
+    /* Záchrana dříve sdílené adresy na malbu. stránka galerie/<slug>.html
+       existuje jen pro malby, které jsou právě teď v galerii — když malbu
+       spravce skryje (prodana) nebo naopak vrati, muze mit clovek v telefonu,
+       v zalozce ci v historie odkaz, ktery uz nevede. GitHub Pages pri 404
+       vraci tenhle soubor, takze to vyresi sam:
+
+         /galerie/<slug>.html  ->  /#lg=1&slide=<slug>   (je-li malba zpet v galerii)
+         /galerie/<slug>.html  ->  /                     (skrytá, odebraná nebo
+                                                                  neznámá malba)
+         jina 404              ->  zustane stranka s vysvetlenim
+
+       Seznam živých slugů (řádka ZIVE, odděleně mezerou) sem prepisuje
+       admin/build.js, aby 404 nenabidel to, co v galerii neni. Hledani je
+       presne (split), takže „pes“ nesedne na „pes-v-zime“. Bez JavaScriptu
+       se presmerovani nedeje a clovek uvidi stranku s vysvetlenim. */    var ZIVE = "hawajanka magicky-zapad cas-sneni horske-jezero excentricka vir-v-parku kocour-filozof tyrkysovy-andel-2 tajemna fialovy-andel-2 lososovy-andel cerny-andel ruzovy-andel-2 zlaty-andel rudy-andel modry-andel-2 pijici-vcelka divoky-hrebec moudra-sova tajemny-vlk veverka-ciperka amazonka oranzovy-andel elektricka zasnena vcela princezna andel-modry novy-andel zima indianka-2 pes-v-zime snezny-levhart zajic-v-desti plavajici-pejsek ruzovy-andel zimni-pohoda pejsek-na-ledu ruzova-kytice vlna lom-na-jare jeskyne zlaty-retrivr zasnezeny-pejsek pejsek-s-beruskou liska-v-zime vlna-2 vistarie zapad-slunce fialovy-andel";
+    (function (zive) {
+        try {
+            var m = /^\/galerie\/([a-z0-9][a-z0-9-]*)\.html$/.exec(
+                decodeURIComponent(location.pathname));
+            if (!m) return;
+            location.replace(zive.split(' ').indexOf(m[1]) === -1
+                ? '/' : '/#lg=1&slide=' + m[1]);
+        } catch (e) { /* stary prohlizec: at zustane 404 jak je */ }
+    }(ZIVE));    </script>
+<!-- gallery:slugs:end -->
     <style>
         /* Samostatné, aby stránka vypadala použitelně i když se nenačte CSS webu. */
         body {

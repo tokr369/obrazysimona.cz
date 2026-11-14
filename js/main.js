@@ -155,9 +155,17 @@ AOS.init({
      *                  . . . trojice tlacitek zoom (priblizit, oddalit,
      *                        skutecnou velikost); default v3 ma jediny
      *                        prepinal, ktery meni ikonu podle stavu
-     *   hashDriver: 'history'
-     *                  . . . deep-link #lg=1&slide=N se do adresy pise
-     *                        pres history.replaceState, tedy jako dosud
+     *   hashDriver: 'history' + customSlideName: true
+     *                  . . . deep-link #lg=1&slide=<slug> se do adresy pise
+     *                        pres history.replaceState, tedy jako dosud; od
+     *                        14. 11. 2026 je v adrese misto cisla slug malby,
+     *                        aby odkaz vydrzel i po presunuti v galerii
+     *   data-share-url na kazdem nahledu
+     *                  . . . WhatsApp, e-mail, Facebook, X i „Kopírovat
+     *                        odkaz“ pouzivaji adresu stranky malby
+     *                        /galerie/<slug>.html, ne aktualni adresu s
+     *                        fragmentem — roboti fragment nevidi a karta by
+     *                        bez vlastni adresy nemohla mit vlastni nahled
      * Navic, ale neviditelne: Tab se toci uvnitr dialogu, pribyvaji oznamy
      * pro ctenare obrazovky a pri "prefers-reduced-motion" v3 prechody sama
      * vypina (stejne tak vyse vypina AOS).
@@ -177,10 +185,13 @@ AOS.init({
 
         var SITE = 'ObrazySimona.cz';
 
-        // Budicka lightGallery prispiva do adresy #lg=1&slide=N, takze
-        // sdilena adresa otevre zrovna tu malbu, u ktere divak je.
-        var shareUrl = function () {
-            return window.location.href;
+        // lightGallery prispiva do adresy #lg=1&slide=<slug> (customSlideName),
+        // ale to neni to, co se posila svetu: karta v Telegramu i WhatsAppu se
+        // postavi podle adresy BEZ fragmentu, a tou je stranka malby
+        // /galerie/<slug>.html. Otevre ji prohlizec, neni-li JavaScript vypnuty,
+        // do galerie na tentoz snimek.
+        var shareUrl = function (item) {
+            return (item && item.shareUrl) || window.location.href;
         };
         // alt v <img> je nazev malby - jediny cisty titulek, ktery item ma
         var shareTitle = function (item) {
@@ -279,6 +290,13 @@ AOS.init({
             showZoomInOutIcons: true,
             hashDriver: 'history',
 
+            // Malba se v adrese jmenuje svojim vlastnim slugem (data-slide-name
+            // na nahledu), ne cislem poradi: #lg=1&slide=zlaty-retrivr. Cislo
+            // by prestavalo platit pri kazdem presunu v galerii, cimz by
+            // ztraty starsich odkazu neuslo predesit. Plugin take umi cisla
+            // (viz pojistka nize), ale vzdycky prepisuje na slug.
+            customSlideName: true,
+
             // obraz saha az dolu, presahuje ho popisek a nahledy - jak to
             // delala 1.6.11 (v3 default nechava obraz vysoucet nad ne).
             // Navic tim je tlacitko pro schovani nahledu, ktere 1.6.11 mela
@@ -297,7 +315,7 @@ AOS.init({
                     selector: '.lg-share-whatsapp',
                     generateLink: function (item) {
                         return 'https://api.whatsapp.com/send?text=' +
-                            encodeURIComponent(shareTitle(item) + ' — ' + SITE + ' ' + shareUrl());
+                            encodeURIComponent(shareTitle(item) + ' — ' + SITE + ' ' + shareUrl(item));
                     },
                     dropdownHTML: shareItem('whatsapp', 'WhatsApp', 'whatsapp')
                 },
@@ -306,7 +324,7 @@ AOS.init({
                     generateLink: function (item) {
                         return 'mailto:?subject=' +
                             encodeURIComponent(shareTitle(item) + ' — ' + SITE) +
-                            '&body=' + encodeURIComponent(shareTitle(item) + '\n' + shareUrl() + '\n');
+                            '&body=' + encodeURIComponent(shareTitle(item) + '\n' + shareUrl(item) + '\n');
                     },
                     dropdownHTML: shareItem('mail', 'E-mail', 'mail')
                 },
@@ -336,6 +354,34 @@ AOS.init({
                 mediaLoadingFailed: 'Nepodařilo se načíst obrázek.'
             }
         });
+
+        /* Pojistka pro drive sdilene adresy. Dokud galerie psala do adresy
+           cislo, mohl nekdo mit v historie #lg=1&slide=6. Plugin s customSlideName
+           v takovem pripade nenajde jmeno a spadl by na prvni malbu; to je
+           sice prezitelne, ale u ciste ciselneho udaje to neni nutne —
+           dokazeme ho prevest na poradi. Predava se jen veci, ktere plugin
+           skutecne expose (vsechny jsou vlastni objektu, takze opatrne). */
+        var hashPlugin = gallery.hashPlugin || (gallery.plugins || []).filter(function (pl) {
+            return pl && typeof pl.getIndexFromUrl === 'function';
+        })[0];
+        if (hashPlugin && !hashPlugin.__obrazysimonaNumberGuard) {
+            hashPlugin.__obrazysimonaNumberGuard = true;
+            var originalIndex = hashPlugin.getIndexFromUrl.bind(hashPlugin);
+            hashPlugin.getIndexFromUrl = function (hash) {
+                if (hash === undefined && hashPlugin.driver) {
+                    hash = hashPlugin.driver.getHash();
+                }
+                var index = originalIndex(hash);
+                if (index === 0 && typeof hash === 'string') {
+                    var arg = hash.split('&slide=')[1];
+                    if (arg !== undefined && /^\d+$/.test(arg)) {
+                        var n = parseInt(arg, 10);
+                        if (n >= 0 && n < gallery.galleryItems.length) index = n;
+                    }
+                }
+                return index;
+            };
+        }
 
         // X odkaz bere text z item.tweetText; bez nej by byl prazdny
         gallery.galleryItems.forEach(function (item) {

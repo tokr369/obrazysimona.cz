@@ -7,6 +7,13 @@ Allow: /
 # ty ve vysledkach vyhledavani nechceme.
 Disallow: /images/big_images/
 
+# Stranky malb v /galerie/ a ctvercove nahledy 1200x630 v adresari /img/og/
+# jsou zamerne verejne — Telegram, WhatsApp a Facebook si z nich stavuji
+# nahledovou kartu. Bez nich by karta byla prazdna, protoze robot JavaScript
+# nespusti a adresu za znakem # vubec nevidi. Nahlady se smi mazat jen
+# spolu s malbou, ktera uz v galerii neni — jinak by drive sdilene odkazy
+# prišly o obrazek v karte.
+
 # Sprava galerie (admin/) na web nepatri; _config.yml ji vylucuje pri nasazeni.
 # Tohle je pojistka, kdyby se do ni nekdy dostala cesta.
 Disallow: /admin/
